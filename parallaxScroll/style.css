@@ -1,0 +1,56 @@
+body {
+	background: white;
+	margin: 0;
+}
+#Img {
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+.parallax {
+	position: fixed;
+	width: 100%;
+	/* overflow: hidden; */
+	top: 0;
+}
+#bg-5 {
+	z-index: 1;
+}
+#bg-4 {
+	z-index: 2;
+}
+#bg-3 {
+	z-index: 3;
+}
+#bg-2 {
+	z-index: 4;
+}
+#bg-1 {
+	z-index: 5;
+}
+#title {
+	z-index: 6;
+	position: relative;
+	top: 30%;
+}
+.title {
+	width: 40%; 
+	position: relative;
+	left: 30%;
+}
+.scene {
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+#show {
+	width: 100%;
+	height: 700px;
+	background: white;
+	text-align: center;
+	position: absolute;
+	z-index: 6;
+	box-shadow: 0 -5px 200px black;
+}
