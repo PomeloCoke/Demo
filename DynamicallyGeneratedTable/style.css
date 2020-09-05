@@ -1,0 +1,87 @@
+body {
+  text-align: center;
+  background-color: rgb(60, 124, 243);
+}
+
+/* 标题 */
+#box{
+  margin: 15px auto;
+  padding: 10px;
+  border: 1px solid rgb(173, 195, 236);
+  border-radius: 25px;
+  min-height: 650px;
+  width: 95%;
+  background-color: white;
+  box-shadow: 0 0 15px rgb(6, 51, 136);
+}
+h1 {
+  color: rgb(60, 124, 243);
+  margin-bottom: -0.5em;
+}
+h3 {
+  color: rgb(143, 177, 241);
+  margin-bottom: 1.5em;
+}
+
+/* 输入 */
+#tableValue {
+  margin: 25px auto;
+  padding: 1em;
+  border: 2px solid rgb(173, 195, 236);
+  border-radius: 25px;
+  width: 200px;
+  background-color: rgba(173, 195, 236,0.6);
+}
+#tableRow, #tableCol {
+  width: 40px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid rgb(173, 195, 236);
+  outline: none;
+}
+label {
+  font-family: "黑体";
+  font-weight: bold;
+  color: rgb(56, 123, 247);
+}
+#commit {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid rgb(173, 195, 236);
+  background-color: rgba(173, 195, 236,0.6);
+  box-shadow: 0 0 5px rgb(143, 177, 241);
+  color: rgb(56, 123, 247);
+  cursor: pointer;
+}
+#commit:active {
+  box-shadow: none;
+}
+/* 表格 */
+table, tr, td {
+  border: 1px solid #ccc;
+}
+table {
+  margin: 20px auto;
+  border: 2px solid rgb(173, 195, 236);
+  border-radius: 15px;
+  overflow: hidden;
+  border-collapse: collapse;
+}
+td {
+  text-align: center;
+  padding: 10px;
+  background-color: #ccc;
+}
+.th {
+  color: rgb(59, 59, 59);
+  font-weight: bold;
+}
+span {
+  color: black;
+}
+.txt {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+}

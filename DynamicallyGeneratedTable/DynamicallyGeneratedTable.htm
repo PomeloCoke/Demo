@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="box">
+    <div id="head">
+      <h1>自动生成表格</h1>
+      <h3>——请输入行和列</h3>
+      <div id="tableValue">
+        <input type="text" id="tableRow">
+        <label for="tableRow">行</label>
+        <input type="text" id="tableCol">
+        <label for="tableCol">列</label>
+      </div>
+      <button id="commit" onclick="addTable()">生成表格</button>
+    </div>
+    <div id="showResult">
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
