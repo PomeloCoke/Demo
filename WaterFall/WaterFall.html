@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			min-height: calc(100vh + 500px);
+		}
+		#container {
+			position: relative;
+			margin: 0 auto;
+		}
+		.box {
+			padding: 15px 0 0 15px;
+			float: left;
+			opacity: 0;
+		}
+		.boxDisplay {
+			opacity: 1;
+			transition: opacity 2s;
+		}
+		.pic {
+			padding: 10px;
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			box-shadow: 0 0 5px #CCC;
+		}
+		img {
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+	</div>
+</body>
+<script>
+	var imgsNumber = 0;
+	function preload() {
+		var container = document.getElementById("container");
+		var newBox, newPic, newImg;
+		for(let i = 0; i < 20; i++ ) {
+			newBox = document.createElement("div");
+			newBox.className = "box";
+			container.appendChild(newBox);
+			newPic = document.createElement("div");
+			newPic.className = "pic";
+			newBox.appendChild(newPic);
+			newImg = document.createElement("img");
+			// if(imgsNumber > 9) {
+			// 	newImg.src = "./img/" + imgsNumber + ".jpg";
+			// } else {
+				newImg.src = "./img/" + imgsNumber + ".jpg";
+			// }
+			newPic.appendChild(newImg);
+			imgsNumber++;
+			setTimeout(waterFull, 200);
+		}
+	}
+
+	function waterFull() {
+		var boxes = document.getElementsByClassName('box');
+		var box_width = document.getElementsByClassName('box')[0].offsetWidth;
+		var w_width = document.body.clientWidth;
+		var column = Math.floor(w_width/box_width);							//计算得到图片列数
+		document.getElementById('container').style.width = column * box_width + "px";
+		var heightArr = [];
+		for(var i = 0; i < boxes.length; i++ ) {
+			if(i < column) {
+				boxes[i].style.position = null;
+				heightArr.push(boxes[i].offsetHeight);						//前列数张图片放入高度数组，也不设置布局
+			} else {
+				var min_height = Math.min.apply(Math,heightArr);			//求得最小高度
+				var min_height_index = heightArr.indexOf(min_height);		//求高度最小的列的列号
+				boxes[i].style.position = "absolute";
+				boxes[i].style.top = min_height + "px";
+				boxes[i].style.left = boxes[min_height_index].offsetLeft + "px";
+				heightArr[min_height_index] += boxes[i].offsetHeight;		//下一张图片布局到此列且加上高度
+			}
+			boxes[i].className = "box boxDisplay";
+		}
+	}
+
+	window.onscroll = function() {
+		if(check_onload() && imgsNumber < 100) {
+			for(let i = 0 ; i < 5 ; i++ ) {
+				newBox = document.createElement("div");
+				newBox.className = "box";
+				container.appendChild(newBox);
+				newPic = document.createElement("div");
+				newPic.className = "pic";
+				newBox.appendChild(newPic);
+				newImg = document.createElement("img");
+				if(imgsNumber < 100) {
+					newImg.src = "./img/" + imgsNumber + ".jpg";
+				} else {
+					delete newBox;
+					break;
+				}
+				newPic.appendChild(newImg);
+				imgsNumber++;
+				setTimeout(waterFull, 200);			//每次加载重新执行waterFull
+			}
+		}
+	}
+
+	function check_onload() {
+		var boxes = document.getElementsByClassName("box");
+		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;       //页面圈走的高度
+		var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;	//客户端窗口高度
+		var lastBoxOffsetTop = boxes[boxes.length-1].offsetTop + boxes[boxes.length-1].offsetHeight / 2;	
+			//最后一个盒子设置的top的距离 + 盒子高度的一半
+		return (lastBoxOffsetTop < scrollTop + clientHeight) ? true : false ;
+	}
+
+	window.onload = preload();
+
+</script>
+</html>
