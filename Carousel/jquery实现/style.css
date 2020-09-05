@@ -1,0 +1,72 @@
+/*清除浏览器预置格式*/
+*{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+/*轮播图部分*/
+.slider{
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+.slider-pics,.slider-nav,.slider-pre,.slider-next{
+  position: absolute;
+  z-index: 8;
+}
+.slider-pics img{
+  border: none;
+}
+/*轮播图下方圆点部分*/
+.slider-circle{
+  position: relative;
+}
+.slider-nav{
+  margin-left: -51px;
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+}
+.slider-nav li{
+  background: #eee9e9;
+  border-radius: 50%;
+  color: #fff;
+  cursor:pointer;
+  margin: 0 2px;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
+  height: 10px;
+  line-height: 18px;
+  width: 10px;
+}
+.slider-nav .slider-item-selected{
+  background: white;
+}
+/*轮播图两侧按钮部分*/
+.slider-button a{
+  background: rgba(0, 0,0, 0.2);
+  color: #fff;
+  text-align: center;
+  display: block;
+  font-size: 22px;
+  width: 28px;
+  height: 62px;
+  line-height: 62px;
+  margin-top: -31px;
+  position: absolute;
+  top: 50%;
+}
+.slider-button a:hover{
+  background: rgba(0, 0,0, 0.4);
+}
+.slider-next{
+  left: 100%;
+  margin-left: -27px;
+}
