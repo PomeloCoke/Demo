@@ -1,0 +1,68 @@
+#list-main-body{
+    text-align: center;
+    margin: 0 auto;   
+}
+.title{
+    margin:auto;
+    padding-top: 20px;
+    padding-bottom: 15px; 
+    background-color: #2b6b59;
+    font-size: 2.5em;
+    color: white;
+}
+.search{
+    margin:auto;
+    width: 600px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#searchBox{
+    width: 600px;
+    height: 40px;
+    border: 1.25px solid #2b6b59;
+    border-radius: 7.5px;
+    box-shadow: 0px 3px 5px #2b6b59;
+}
+.list-info,.list-name,.list-password{
+    border-top: 2px solid #2b6b59;
+    border-bottom: 2px solid #2b6b59;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    line-height: 1.5em;
+    
+}
+.list-info{
+    height: 520px;
+    overflow-y: auto;
+    box-shadow: 0px 0px 3px #2b6b59;
+}
+.list-info::-webkit-scrollbar{
+    width: 10px;
+    background-color: #2b6b59;
+}
+.list-info::-webkit-scrollbar-thumb{
+    width: 9px;
+    height: 9px;
+    border-radius: 5px;
+    background-color:#60a18f ;
+}
+.list-name{
+    border-right: 2px solid #2b6b59;
+    color: black;
+}
+.list-password{
+    font-weight: bold;
+}
+
+.col-xs-12{
+    border-bottom: 2px solid #2b6b59;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    line-height: 1.5em;
+}
+.list-link{
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: left;
+}
+
