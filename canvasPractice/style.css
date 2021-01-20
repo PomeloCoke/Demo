@@ -1,0 +1,48 @@
+/* 样式重置 */
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+ol, ul {
+  list-style: none;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 12px;
+}
+body {
+  width: calc(100% - 60px);
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 30px;
+  background-color: #F3EDF0;
+}
+canvas {
+  width: 300px;
+  height: 150px;
+  margin-bottom: 30px;
+  border: 1px solid #221F20;
+}
+.canvas-container {
+ display: flex;
+ justify-content: space-between;
+ flex-wrap: wrap;
+}

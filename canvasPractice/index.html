@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>CanvasPratice</title>
+</head>
+<body>
+  <div class="canvas-container">
+    <canvas id="one"></canvas>
+    <canvas id="two"></canvas>
+    <canvas id="three"></canvas>
+    <canvas id="four"></canvas>
+    <canvas id="five"></canvas>
+  </div>
+</body>
+<script type="text/javascript">
+  // 文本
+    // one
+  let one = document.getElementById("one");
+  let oneText = one.getContext("2d");
+  /*
+    属性名: textAlign 水平方向对齐方式
+    属性值: start
+           end
+           center
+           left
+           right
+  */
+  oneText.textAlign = "center"
+  /*
+    属性名: textBaseline 垂直方向对齐方式
+    属性值: alphabetic
+           top
+           hanging
+           middle
+           ideographic
+           bottom
+  */
+  oneText.textBaseline = "middle"
+  oneText.font="20px Georgia"
+  oneText.fillText("颜色/样式和阴影", 150, 75)
+    // two
+  let two = document.getElementById("two");
+  let twoText = two.getContext("2d");
+  twoText.textAlign = "center"
+  twoText.textBaseline = "middle"
+  twoText.font="20px Georgia"
+  twoText.fillText("线条样式", 150, 75)
+    // three
+  let three = document.getElementById("three");
+  let threeText = three.getContext("2d");
+  threeText.textAlign = "center"
+  threeText.textBaseline = "middle"
+  threeText.font="20px Georgia"
+  threeText.fillText("矩形", 150, 75)
+    // four
+  let four = document.getElementById("four");
+  let fourText = four.getContext("2d");
+  fourText.textAlign = "center"
+  fourText.textBaseline = "middle"
+  fourText.font="20px Georgia"
+  fourText.fillText("路径", 150, 75)
+    // five
+  let five = document.getElementById("five");
+  let fiveText = five.getContext("2d");
+  fiveText.textAlign = "center"
+  fiveText.textBaseline = "middle"
+  fiveText.font="20px Georgia"
+  fiveText.fillText("转换", 150, 75)
+
+  // 颜色/样式和阴影
+    /*
+      方法名: createLinearGradient()
+    */
+    let grd = oneText.createLinearGradient(0,0,300,0);
+    grd.addColorStop(0,"#FFC93C");
+    grd.addColorStop(0.5,"#E1B6B6");
+    grd.addColorStop(1,"#EAA9A9");
+    oneText.fillStyle = grd;
+    oneText.fillRect(0,0,300,150)
+</script>
+</html>
